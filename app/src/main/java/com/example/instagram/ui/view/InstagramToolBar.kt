@@ -14,21 +14,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.instagram.R
+import com.example.instagram.ui.theme.spacingLarge
+import com.example.instagram.ui.theme.spacingMedium
 
 @Composable
 fun InstagramToolBar() {
+    val instagramLabel = stringResource(id = R.string.app_name)
+
     Box(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
         Row (modifier = Modifier
-            .padding(horizontal = 16.dp)
+            .padding(horizontal = spacingLarge)
             .height(56.dp)
         ){
 
             Text(
-                text = "Instagram",
+                text = instagramLabel,
                 modifier = Modifier.weight(1f),
                 style = MaterialTheme.typography.headlineLarge
             )
@@ -37,17 +42,19 @@ fun InstagramToolBar() {
                 painter = painterResource(id = R.drawable.ic_notification),
                 modifier = Modifier
                     .size(32.dp)
-                    .padding(end = 8.dp)
+                    .padding(end = spacingMedium)
                     .align(Alignment.CenterVertically),
-                contentDescription = "Icono de notificación de barra de herramientas.")
+                contentDescription = stringResource(R.string.content_description_notification_icon)
+            )
 
             Image(
                 painter = painterResource(id = R.drawable.ic_message),
                 modifier = Modifier
                     .size(32.dp)
-                    .padding(start = 8.dp)
+                    .padding(start = spacingMedium)
                     .align(Alignment.CenterVertically),
-                contentDescription = "Icono de mensajes directos (DM) de la barra de herramientas.")
+                contentDescription = stringResource(R.string.content_description_message_icon)
+            )
         }
     }
 }
