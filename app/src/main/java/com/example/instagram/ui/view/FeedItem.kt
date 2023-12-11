@@ -33,8 +33,18 @@ import com.example.instagram.ui.theme.spacingSmall
 @Composable
 fun FeedItem(feed: Feed) {
 
+    val likeIcon = R.drawable.ic_notification
+    val messageIcon = R.drawable.ic_message
+    val commentIcon = R.drawable.ic_comment
+    val bookmarkIcon = R.drawable.ic_bookmark
+
+
     val userAvatarContentDesc = stringResource(R.string.content_description_feed_avatar)
     val feedImageContentDesc = stringResource(R.string.content_description_feed_image)
+    val likeContentDesc = stringResource(R.string.button_like_content_description)
+    val messageContentDesc = stringResource(R.string.button_message_content_description)
+    val commentContentDesc = stringResource(R.string.button_coment_content_description)
+    val bookmarkContentDesc = stringResource(R.string.button_bookmark_content_description)
 
     Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
 

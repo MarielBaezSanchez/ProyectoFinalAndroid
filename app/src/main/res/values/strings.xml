@@ -5,4 +5,8 @@
     <string name="content_description_story" formatted="true">La historia de %s no fue visualizada</string>
     <string name="content_description_feed_avatar">Avatar con imagen del autor del post</string>
     <string name="content_description_feed_image">Imagen que muestra la foto de la publicación</string>
+    <string name="button_like_content_description">Botón para darle Me Gusta a la publicación</string>
+    <string name="button_message_content_description">Botón para enviar la publicación</string>
+    <string name="button_coment_content_description">Botón para comentar la publicaciónn</string>
+    <string name="button_bookmark_content_description">Botón para marcar la publicacion</string>
 </resources>
