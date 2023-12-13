@@ -1,4 +1,4 @@
-package com.example.instagram.ui.view
+package com.compose.instagram.ui.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.compose.instagram.ui.theme.InstagramTheme
 import com.example.instagram.R
 import com.example.instagram.data.model.Story
 import com.example.instagram.data.repository.stories
@@ -31,7 +32,8 @@ import com.example.instagram.ui.theme.spacingSmall
 @Composable
 fun StoryItem(story: Story) {
 
-    val avatarContentDesc = stringResource(id = R.string.content_description_story, story.userNickName)
+    val avatarContentDesc =
+        stringResource(id = R.string.content_description_story, story.userNickName)
 
     Column(
         modifier = Modifier
@@ -56,7 +58,6 @@ fun StoryItem(story: Story) {
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             textAlign = TextAlign.Center
-
         )
     }
 }
@@ -65,4 +66,12 @@ fun StoryItem(story: Story) {
 @Composable
 fun StoryItemPreview() {
     StoryItem(story = stories[0])
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DarkStoryItemPreview() {
+    InstagramTheme(darkTheme = true) {
+        StoryItem(story = stories[0])
+    }
 }
