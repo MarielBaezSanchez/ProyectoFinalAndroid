@@ -36,7 +36,7 @@ fun HomeScreen() {
             Divider(color = MaterialTheme.colorScheme.onSurface, thickness = 0.2.dp)
         }
 
-        feedList(feedList = com.example.instagram.data.repository.feedList)
+        feedList(feedList = com.example.instagram. data.repository.feedList)
 
     }
 }

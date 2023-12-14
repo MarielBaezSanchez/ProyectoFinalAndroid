@@ -3,6 +3,7 @@ package com.compose.instagram.ui.theme
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
@@ -19,7 +20,6 @@ import com.example.instagram.ui.theme.Purple40
 import com.example.instagram.ui.theme.Purple80
 import com.example.instagram.ui.theme.PurpleGrey40
 import com.example.instagram.ui.theme.PurpleGrey80
-import com.example.instagram.ui.theme.typography
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -58,7 +58,7 @@ fun InstagramTheme(
         }
     }
 
-    val typography = typography(colorScheme.onBackground)
+    val typography = typography(colorScheme)
 
     MaterialTheme(
         colorScheme = colorScheme,

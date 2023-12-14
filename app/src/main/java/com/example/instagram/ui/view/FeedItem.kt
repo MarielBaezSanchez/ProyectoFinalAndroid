@@ -55,15 +55,15 @@ fun FeedItem(feed: Feed) {
 
     val likeIcon = R.drawable.ic_notification
     val likedIcon = R.drawable.ic_liked
-    val messageIcon = R.drawable.ic_message
     val commentIcon = R.drawable.ic_comment
+    val messageIcon = R.drawable.ic_message
     val bookmarkIcon = R.drawable.ic_bookmark
 
     val userAvatarContentDesc = stringResource(R.string.content_description_feed_avatar)
     val feedImageContentDesc = stringResource(R.string.content_description_feed_image)
     val likeContentDesc = stringResource(R.string.button_like_content_description)
-    val messageContentDesc = stringResource(R.string.button_message_content_description)
     val commentContentDesc = stringResource(R.string.button_comment_content_description)
+    val messageContentDesc = stringResource(R.string.button_message_content_description)
     val bookmarkContentDesc = stringResource(R.string.button_bookmark_content_description)
     val messageToastText = stringResource(id = R.string.button_message_toast_text)
     val commentToastText = stringResource(id = R.string.button_comment_toast_text)
@@ -151,17 +151,16 @@ fun FeedItem(feed: Feed) {
                 contentDescription = commentContentDesc,
                 color = iconsColor
             ) {
-                val toast = Toast.makeText(context, commentToastText, duration)
-                toast.show()
+                Toast.makeText(context, commentToastText, duration).show()
             }
+
 
             FeedIcon(
                 icon = messageIcon,
                 contentDescription = messageContentDesc,
                 color = iconsColor
             ) {
-                val toast = Toast.makeText(context, messageToastText, duration)
-                toast.show()
+                Toast.makeText(context, messageToastText, duration).show()
             }
 
             Image(
@@ -173,8 +172,7 @@ fun FeedItem(feed: Feed) {
                     .weight(1f)
                     .wrapContentWidth(align = Alignment.End)
                     .clickable {
-                        val toast = Toast.makeText(context, bookmarkToastText, duration)
-                        toast.show()
+                        Toast.makeText(context, bookmarkToastText, duration).show()
                     },
                 colorFilter = ColorFilter.tint(iconsColor)
             )
