@@ -50,7 +50,16 @@ fun InstagramTheme(
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
+    val auth = FirebaseAuth.getInstance()
 
+    SideEffect {
+        val user = auth.currentUser
+        if (user != null) {
+            // El usuario está conectado
+        } else {
+            // El usuario no está conectado
+        }
+    }
 
     val view = LocalView.current
     if (!view.isInEditMode) {

@@ -15,15 +15,14 @@ import androidx.compose.ui.unit.dp
 import com.compose.instagram.ui.theme.InstagramTheme
 import com.example.instagram.data.model.Feed
 import com.example.instagram.data.model.Story
+import com.example.instagram.data.repository.feedList
 import com.example.instagram.data.repository.stories
 import com.example.instagram.ui.theme.spacingMedium
-
+import com.google.firebase.database.FirebaseDatabase
 
 @Composable
 fun HomeScreen() {
-
     LazyColumn(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
-
         item {
             InstagramToolBar()
         }
@@ -36,8 +35,7 @@ fun HomeScreen() {
             Divider(color = MaterialTheme.colorScheme.onSurface, thickness = 0.2.dp)
         }
 
-        feedList(feedList = com.example.instagram. data.repository.feedList)
-
+        feedList(feedList = feedList)
     }
 }
 
@@ -51,9 +49,22 @@ fun StoryList(stories: List<Story>) {
 }
 
 fun LazyListScope.feedList(feedList: List<Feed>) {
-    itemsIndexed(feedList) { _, item ->
+    itemsIndexed(feedList) { index, item ->
         FeedItem(feed = item)
+
+        // Aquí puedes agregar la lógica para almacenar el feed en Firebase
+        storeFeedToFirebase(index, item)
     }
+}
+
+fun storeFeedToFirebase(index: Int, feed: Feed) {
+    val feedsRef = FirebaseDatabase.getInstance().getReference("feeds")
+
+    // Utiliza el índice como identificador único del feed en Firebase
+    val feedId = index.toString()
+
+    // Almacena el feed en Firebase bajo el identificador único
+    feedsRef.child(feedId).setValue(feed)
 }
 
 @Preview(showBackground = true)
