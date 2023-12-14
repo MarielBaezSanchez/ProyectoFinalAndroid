@@ -3,7 +3,6 @@ package com.compose.instagram.ui.theme
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
@@ -20,6 +19,7 @@ import com.example.instagram.ui.theme.Purple40
 import com.example.instagram.ui.theme.Purple80
 import com.example.instagram.ui.theme.PurpleGrey40
 import com.example.instagram.ui.theme.PurpleGrey80
+import com.google.firebase.auth.FirebaseAuth
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -50,6 +50,8 @@ fun InstagramTheme(
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
+
+
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {

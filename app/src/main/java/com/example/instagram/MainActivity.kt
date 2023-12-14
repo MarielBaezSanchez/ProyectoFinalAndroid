@@ -9,6 +9,7 @@ import com.compose.instagram.ui.view.HomeScreen
 
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
